@@ -1,0 +1,20 @@
+hallucinations:
+  title: Identifying LLM hallucinations
+  blurb: Understand the circumstances in which AI will give you false information.
+  url: /hallucinations/
+  time: About 35 minutes
+sycophancy:
+  title: LLM sycophancy and working with others
+  blurb: Understand how your own confidence in a subject can become biased from AI usage.
+  url: /sycophancy/
+  time: About 35 minutes
+grit:
+  title: "Grit: struggling with hard problems"
+  blurb: Understand how AI help during practice can lower later performance.
+  url: /grit/
+  time: About 35 minutes
+mental-health:
+  title: AI and mental health
+  blurb: This module is in development.
+  url: /mental-health/
+  time: Coming soon

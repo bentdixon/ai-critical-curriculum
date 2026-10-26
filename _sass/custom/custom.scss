@@ -1,0 +1,190 @@
+// Card look taken from the Just the Class template
+@mixin abstract-card() {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+  border-radius: $border-radius;
+}
+
+// ---------- Home page ----------
+.module-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-4;
+  margin: $sp-6 0;
+
+  @include mq(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.main-content a.module-card {
+  @include abstract-card();
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+  padding: $sp-5;
+  color: $body-text-color;
+  text-decoration: none;
+  border: $border $border-color;
+  transition: box-shadow .15s, border-color .15s;
+  white-space: normal;
+  min-width: 0;
+  overflow-wrap: break-word;
+
+  &:hover, &:focus {
+    border-color: $link-color;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(114, 83, 237, 0.12);
+  }
+
+  .module-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(114, 83, 237, 0.1);
+    color: $link-color;
+  }
+  .module-title { color: $body-heading-color; font-weight: 500; @include fs-5; }
+  .module-blurb { @include fs-3; }
+  .module-time { color: $grey-dk-000; @include fs-2; }
+
+  &.is-soon {
+    .module-icon { background: $grey-lt-100; color: $grey-dk-000; }
+    .module-title { color: $grey-dk-100; }
+  }
+}
+
+// ---------- Module pages ----------
+.lesson {
+  .muted { color: $grey-dk-000; }
+  .small { @include fs-3; }
+  .hidden { display: none; }
+
+  table { margin: $sp-3 0; }
+}
+
+dl.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: $sp-1 $sp-4;
+  margin: $sp-4 0;
+  dt { color: $grey-dk-000; font-weight: normal; }
+  dt::after { content: normal; }
+  dd { margin: 0; }
+}
+
+.lesson label { display: block; margin: $sp-4 0 $sp-1; color: $body-heading-color; }
+.lesson label.choice {
+  display: flex; gap: $sp-2; align-items: baseline;
+  margin: $sp-2 0; color: $body-text-color; cursor: pointer;
+  input { flex: none; }
+}
+
+.lesson input[type=text], .lesson textarea, .lesson select {
+  width: 100%;
+  font: inherit;
+  color: $body-text-color;
+  background: $white;
+  border: $border $grey-lt-300;
+  border-radius: $border-radius;
+  padding: $sp-2 $sp-3;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  &:focus { outline: none; border-color: $link-color; box-shadow: 0 0 0 3px rgba(114, 83, 237, 0.15); }
+}
+.lesson textarea { min-height: 84px; resize: vertical; }
+.lesson input.short { width: 10em; }
+.lesson select { width: auto; min-width: 12em; }
+.lesson input[type=range] { width: 100%; accent-color: $link-color; }
+
+.lesson .scale { display: flex; justify-content: space-between; color: $grey-dk-000; @include fs-2; }
+.lesson .rating-val { color: $link-color; font-weight: 500; }
+
+.lesson .row { display: flex; gap: $sp-3; align-items: center; flex-wrap: wrap; margin: $sp-3 0; }
+
+.lesson button {
+  @extend .btn;
+}
+.lesson button.primary, .lesson #print {
+  @extend .btn-primary;
+}
+
+// Text to paste into an AI tool
+.lesson .prompt {
+  border-left: 3px solid $link-color;
+  background: $grey-lt-000;
+  border-radius: 0 $border-radius $border-radius 0;
+  padding: $sp-3 $sp-4;
+  margin: $sp-3 0;
+  .text { color: $body-heading-color; }
+  .copy { margin-top: $sp-2; @include fs-2; padding: 2px $sp-3; }
+}
+
+// Bordered block, card style
+.lesson .ruled {
+  @include abstract-card();
+  border: $border $border-color;
+  padding: $sp-4;
+  margin: $sp-4 0;
+  > :last-child { margin-bottom: 0; }
+}
+
+.lesson .case {
+  border-left: 3px solid $grey-lt-300;
+  padding-left: $sp-4;
+  margin: $sp-4 0;
+  font-style: italic;
+}
+
+.lesson .feedback { margin: $sp-2 0; min-height: 1.2em; }
+.lesson .feedback.ok { color: $green-200; }
+.lesson .feedback.no { color: $red-200; }
+
+.lesson .turn { border-bottom: $border $border-color; padding: $sp-2 0; }
+.lesson .turn .row { margin: $sp-1 0; }
+.lesson .turn-n { color: $link-color; width: 4.5em; flex: none; }
+
+.lesson .timer { @include fs-6; color: $link-color; font-variant-numeric: tabular-nums; }
+
+.lesson .eq { display: flex; align-items: center; margin: $sp-2 0; }
+.lesson .eq .m { flex: 1; text-align: center; }
+.lesson .eq .n { width: 3em; text-align: right; color: $grey-dk-000; }
+
+.lesson .refs { list-style: none; padding-left: 0; @include fs-3; }
+.lesson .refs li { padding-left: 2em; text-indent: -2em; margin-bottom: $sp-2; overflow-wrap: anywhere; }
+.lesson .refs li::before { content: none; }
+
+#summary dt { color: $body-heading-color; margin-top: $sp-3; font-weight: 500; }
+#summary dt::after { content: normal; }
+#summary dd { margin: $sp-1 0 0; white-space: pre-wrap; }
+
+// Chart (Sycophancy debrief)
+.chart { max-width: 560px; }
+.chart text { font-size: 18px; fill: $grey-dk-000; }
+.chart-legend { @include fs-3; display: flex; align-items: center; gap: $sp-2; flex-wrap: wrap; }
+.chart-legend span { display: inline-block; width: 24px; border-top: 3px solid $link-color; margin-left: $sp-2; }
+.chart-legend span:first-child { margin-left: 0; }
+.chart-legend .k2 { border-top: 3px dashed $grey-dk-000; }
+.chart .lab { fill: $body-heading-color; }
+.chart .grid { stroke: $border-color; stroke-width: 1; }
+.chart .l1 { stroke: $link-color; stroke-width: 2.5; fill: none; }
+.chart .l2 { stroke: $grey-dk-000; stroke-width: 2.5; fill: none; stroke-dasharray: 6 5; }
+.chart .d1 { fill: $link-color; }
+.chart .d2 { fill: $grey-dk-000; }
+
+// Back / next
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: $sp-3;
+  flex-wrap: wrap;
+  margin-top: $sp-8;
+  padding-top: $sp-4;
+  border-top: $border $border-color;
+}
+
+@media print {
+  .side-bar, .main-header, .pager, .no-print, .site-footer, button { display: none !important; }
+  .main { margin: 0 !important; max-width: none !important; }
+}

@@ -1,0 +1,10 @@
+{% if page.katex %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+{% endif %}
+{% if page.module %}
+<script>window.ACC_MODULE = "{{ page.module }}"; window.ACC_ORDER = {{ page.nav_order | default: 0 }};</script>
+<script defer src="{{ '/assets/js/common.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/' | append: page.module | append: '.js' | relative_url }}"></script>
+{% endif %}

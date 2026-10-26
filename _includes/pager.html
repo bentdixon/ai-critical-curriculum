@@ -1,0 +1,8 @@
+<nav class="pager no-print" aria-label="Module pages">
+  {% if page.prev_page %}{% assign pp = site.html_pages | where: "url", page.prev_page | first %}
+  <a class="btn btn-outline" href="{{ page.prev_page | relative_url }}">← {{ pp.title }}</a>
+  {% else %}<span></span>{% endif %}
+  {% if page.next_page %}{% assign np = site.html_pages | where: "url", page.next_page | first %}
+  <a class="btn btn-primary" href="{{ page.next_page | relative_url }}">{{ np.title }} →</a>
+  {% else %}<a class="btn btn-primary" href="{{ '/' | relative_url }}">All modules</a>{% endif %}
+</nav>
