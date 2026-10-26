@@ -18,6 +18,11 @@ mental-health:
   blurb: Understand how relying on AI can affect your mental health.
   url: /mental-health/
   time: About 35 minutes
+positive-usage:
+  title: Using LLMs effectively
+  blurb: Understand how AI can support each level of learning.
+  url: /positive-usage/
+  time: About 35 minutes
 reflection:
   title: Reflecting on your AI use
   blurb: Understand how you use AI now, and how you want to use it.
