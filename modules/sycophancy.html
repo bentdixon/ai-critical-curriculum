@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Sycophancy and Others</title>
-<meta name="description" content="A self-paced module: track how your certainty changes after an agreeable AI and after hearing the other side.">
+<title>LLM Sycophancy and Others</title>
+<meta name="description" content="Understand how your own confidence in a subject can become biased from AI usage.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -28,53 +28,67 @@
     <span class="muted">About 35 minutes</span>
   </header>
 
-  <h1>AI sycophancy and working with others</h1>
+  <h1>LLM sycophancy and working with others</h1>
   <p class="progress"></p>
   <div class="bar"><span></span></div>
 
   <!-- 1 -->
   <section class="step" data-title="Introduction">
-    <h2>A question to start</h2>
-    <p>Have you ever asked an AI whether you were right in an argument?</p>
-    <p>Researchers took real posts from a Reddit forum where people ask whether they were in the wrong. In cases where other people agreed the poster was wrong, AI models still sided with the poster 51% of the time. The people on the forum sided with them 0% of the time (Cheng et al. 2026).</p>
+    <h2>Who was right?</h2>
+    <p>Have you asked AI whether you were right in an argument?</p>
+    <p>Researchers studied Reddit disputes where people judged the poster wrong. AI sided with the poster 51% of the time. Humans sided with them 0% of the time (Cheng et al. 2026).</p>
     <h2>What sycophancy is</h2>
-    <p>Sycophancy is when an AI tells you what you want to hear instead of what is accurate. It takes two forms:</p>
-    <ul>
-      <li>agreeing with your stated view over the truth, and</li>
-      <li>protecting your self-image: validating you, endorsing you, and avoiding blaming you.</li>
-    </ul>
-    <h2>What you will do</h2>
-    <p>You will pick a side on a low-stakes question, ask an AI to help you argue it, then read the case for the other side from a fellow student. You will rate your certainty three times and see how it moves.</p>
-    <p>By the end you should be able to explain what AI sycophancy is, describe how it changed your own certainty, and write a prompt that makes an AI argue against you.</p>
+    <p>Sycophancy is when AI tells users what they want to hear. It does this instead of being accurate or helpful.</p>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Term</th><th>Definition</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Sycophancy</td><td>Agreeing with the user's stated view over the truth</td><td>The AI drops a correct answer after “Are you sure?”</td></tr>
+        <tr><td>Social sycophancy</td><td>Protecting the user's self-image: validating, endorsing, avoiding blame</td><td>Telling someone they were right in an argument a community judged they were wrong in</td></tr>
+        <tr><td>Certainty inflation</td><td>Becoming more confident without becoming more correct</td><td>Feeling surer of a view after a one-sided chat</td></tr>
+        <tr><td>Intellectual humility</td><td>Recognising your views might be wrong and staying open to others</td><td>Asking “What is the best case for the other side?”</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h2>About this module</h2>
+    <p>You will take a side on a low-stakes question. An AI will help you argue it. Then you will read the other side's case. You will rate your certainty three times.</p>
+    <p>By the end, you will be able to:</p>
+    <ol>
+      <li>Define LLM sycophancy and explain why AI training rewards it.</li>
+      <li>Describe how AI agreement raises certainty and hinders navigating disagreements.</li>
+      <li>Detect sycophancy by recording when the AI agrees or pushes back.</li>
+      <li>Reach a shared position with someone who disagrees.</li>
+      <li>Write a prompt that asks AI to challenge your view.</li>
+    </ol>
   </section>
 
   <!-- 2 -->
-  <section class="step" data-title="Pick a side">
+  <section class="step" data-title="Take sides">
     <h2>Choose a question</h2>
-    <label class="choice"><input type="radio" name="q" value="0" data-key="q" data-summary="Question"> Should university lectures be recorded?</label>
+    <label class="choice"><input type="radio" name="q" value="0" data-key="q"> Should lectures be recorded?</label>
     <label class="choice"><input type="radio" name="q" value="1" data-key="q"> Should exams be open-book?</label>
     <label class="choice"><input type="radio" name="q" value="2" data-key="q"> Is studying in groups better than studying alone?</label>
     <h2>Choose your side</h2>
-    <p class="muted small">Pick the side you lean towards. If you have no view, pick one anyway and argue it.</p>
+    <p class="muted small">Pick the side you lean towards. If unsure, pick one anyway.</p>
     <div id="sidePick"></div>
-    <h2>Rate yourself now</h2>
+    <h2>Rate your views</h2>
     <label for="c1">How certain are you of your side? <span class="rating-val" data-for="c1">5</span> / 10</label>
-    <input type="range" id="c1" min="0" max="10" step="1" value="5" data-key="c1" data-summary="Certainty at start (0–10)">
+    <input type="range" id="c1" min="0" max="10" step="1" value="5" data-key="c1" data-summary="Certainty at the start (0–10)">
     <div class="scale"><span>Not at all</span><span>Completely</span></div>
     <label for="r1">How reasonable does the other side seem? <span class="rating-val" data-for="r1">5</span> / 10</label>
-    <input type="range" id="r1" min="0" max="10" step="1" value="5" data-key="r1" data-summary="Other side reasonable at start (0–10)">
+    <input type="range" id="r1" min="0" max="10" step="1" value="5" data-key="r1" data-summary="Other side reasonable at the start (0–10)">
     <div class="scale"><span>Not at all</span><span>Completely</span></div>
   </section>
 
   <!-- 3 -->
-  <section class="step" data-title="AI round">
-    <h2>Ask an AI to help you argue</h2>
-    <p>Open your AI tool in another tab and start a new chat. Use its normal settings, with no special instructions. Start with this:</p>
+  <section class="step" data-title="Private AI consult">
+    <h2>Ask an AI to make your case</h2>
+    <p>Open an AI assistant in another tab. Start a new chat with default settings. Use no special prompt. Ask it to help make the case for your side:</p>
     <div class="prompt"><div class="text" id="aiPrompt"></div><button class="copy" type="button">Copy</button></div>
-    <p>Keep going for four to six messages. Whenever the AI raises a point for the other side, push back, for example: “I don't think that's a strong point. Can you help me answer it?”</p>
-    <p>Mark each AI reply below.</p>
+    <p>Push back if the AI disagrees. For example: “That point is weak. Help me answer it.” Continue for four to six replies.</p>
+    <p>Note each reply as “agreed” or “pushed back”.</p>
     <div id="replies"></div>
-    <h2>Rate yourself again</h2>
+    <h2>Rate your views again</h2>
     <label for="c2">How certain are you of your side? <span class="rating-val" data-for="c2">5</span> / 10</label>
     <input type="range" id="c2" min="0" max="10" step="1" value="5" data-key="c2" data-summary="Certainty after the AI (0–10)">
     <div class="scale"><span>Not at all</span><span>Completely</span></div>
@@ -84,18 +98,18 @@
   </section>
 
   <!-- 4 -->
-  <section class="step" data-title="The other side">
-    <h2>Hear from someone who disagrees</h2>
-    <p>In class, you would now meet a partner who argued the other side. Here, read what a fellow student wrote. If a friend or classmate is free, do this step with them instead.</p>
+  <section class="step" data-title="Joint answer">
+    <h2>Hear the other side</h2>
+    <p>In class, you would now meet a partner who disagrees. Here, read a case from a student on the other side. If a friend is free, do this step with them.</p>
     <div class="case" id="otherCase"></div>
-    <h2>Find a shared position</h2>
-    <label for="theirBest">The strongest point on their side</label>
-    <textarea id="theirBest" data-key="theirBest" data-summary="Strongest point for the other side"></textarea>
-    <label for="myBest">The strongest point on your side</label>
-    <textarea id="myBest" data-key="myBest" data-summary="Strongest point for my side"></textarea>
-    <label for="shared">A position you could both accept, in one or two sentences</label>
+    <h2>Agree on one position</h2>
+    <label for="theirBest">The strongest point from their side</label>
+    <textarea id="theirBest" data-key="theirBest" data-summary="Strongest point from the other side"></textarea>
+    <label for="myBest">The strongest point from your side</label>
+    <textarea id="myBest" data-key="myBest" data-summary="Strongest point from my side"></textarea>
+    <label for="shared">One position you could both accept</label>
     <textarea id="shared" data-key="shared" data-summary="Shared position"></textarea>
-    <h2>Rate yourself a third time</h2>
+    <h2>Rate your views a third time</h2>
     <label for="c3">How certain are you of your side? <span class="rating-val" data-for="c3">5</span> / 10</label>
     <input type="range" id="c3" min="0" max="10" step="1" value="5" data-key="c3" data-summary="Certainty after the other side (0–10)">
     <div class="scale"><span>Not at all</span><span>Completely</span></div>
@@ -109,41 +123,43 @@
     <h2>Your ratings</h2>
     <div id="chart"></div>
     <p id="aiCount"></p>
-    <label for="feel">How did reading the other side feel compared with talking to the AI?</label>
-    <textarea id="feel" data-key="feel" data-summary="AI compared with the other side"></textarea>
-    <div class="row"><button type="button" id="reveal">Show what the research predicts</button></div>
+    <label for="feel">How did the other side's case feel compared with the AI?</label>
+    <textarea id="feel" data-key="feel" data-summary="The other side compared with the AI"></textarea>
+    <div class="row"><button type="button" id="reveal">Show the research</button></div>
     <div id="research" class="hidden">
-      <h2>What the research found</h2>
+      <h2>The research</h2>
       <p id="compare"></p>
-      <p>In one study, brief chats with an agreeable AI made people's political views more extreme and more certain, while a disagreeing AI did the opposite (Rathje et al. 2025).</p>
-      <p>Across 11 models, AI affirmed users 49% more often than humans did. Agreeable replies made people feel more “in the right” and less willing to apologise. After discussing a real conflict with an AI that took their side, only 50% admitted fault or apologised in a follow-up letter to the other person, compared with 75% after an AI that did not simply agree (Cheng et al. 2026). Over three weeks, agreeable AI also made real conversations with people feel more effortful and less satisfying (Ibrahim et al. 2026).</p>
-      <h3>Why AI does this</h3>
-      <p>AI models are trained partly on human ratings, and people tend to rate agreeable answers higher, so training rewards agreement (Sharma et al. 2024). Models often still “know” the correct answer when they give in (Hong et al. 2025).</p>
+      <p>AI affirmed users 49% more often than humans did. Sycophantic replies made people feel more “in the right.” They also made people less willing to apologise (Cheng et al. 2026).</p>
+      <p>Brief chats with an agreeable LLM made political views more certain. A disagreeing LLM did the opposite (Rathje et al. 2025).</p>
+      <p>People discussed a real conflict with an agreeable AI. Only 50% then admitted fault or apologised. After a less agreeable AI, 75% did (Cheng et al. 2026).</p>
+      <p>Over three weeks, sycophantic AI made real conversations feel more effortful. They also felt less satisfying (Ibrahim et al. 2026).</p>
+      <h3>Why sycophancy happens</h3>
+      <p>AI models are trained on human ratings. People tend to rate agreeable answers higher. So training rewards agreement (Sharma et al. 2024). Models often still “know” the correct answer when they give in (Hong et al. 2025).</p>
       <h3>Common misconceptions</h3>
       <ul>
-        <li>“The AI is neutral.” People rate an agreeable AI as unbiased and a disagreeing AI as biased.</li>
-        <li>“If the AI agrees, I must be right.” Agreement is often the AI's default.</li>
-        <li>“I'd notice if it were flattering me.” People trust agreeable AI more and often want to return to it.</li>
-        <li>“Being challenged is unhelpful.” Disagreement lowers overconfidence, which matters when you work in a team.</li>
+        <li>“The AI is neutral.” People rate an agreeable AI as unbiased.</li>
+        <li>“If the AI agrees, I must be right.” Agreement is frequently the AI’s default behaviour.</li>
+        <li>“I’d notice if it were flattering me.” People trust sycophantic AI more.</li>
+        <li>“Being challenged is unhelpful.” Disagreement lowers overconfidence, as working in a team does.</li>
       </ul>
-      <p class="muted">Sycophancy can also reinforce harmful beliefs in vulnerable users (Østergaard 2025; Morrin et al. 2026). The Mental Health module covers this in more depth.</p>
+      <h3>Mental health</h3>
+      <p>Sycophancy can also reinforce delusional beliefs in vulnerable users (Østergaard 2025; Morrin et al. 2026). The Mental Health module covers this more fully.</p>
     </div>
   </section>
 
   <!-- 6 -->
   <section class="step" data-title="Exit ticket">
-    <h2>Two last things</h2>
-    <label for="exitPrompt">Write one prompt that would make an AI argue against your view.</label>
-    <textarea id="exitPrompt" data-key="exitPrompt" data-summary="Prompt to make an AI argue against me"></textarea>
-    <label for="exitShift">Write one point from the other side that shifted your thinking, even slightly.</label>
+    <h2>Exit ticket (ungraded)</h2>
+    <label for="exitPrompt">Write one prompt that makes an AI argue against your view.</label>
+    <textarea id="exitPrompt" data-key="exitPrompt" data-summary="Prompt that makes an AI argue against my view"></textarea>
+    <label for="exitShift">Write one point from the other side that shifted your thinking.</label>
     <textarea id="exitShift" data-key="exitShift" data-summary="Point that shifted my thinking"></textarea>
-    <p class="muted small">This is not graded.</p>
   </section>
 
   <!-- 7 -->
   <section class="step summary-step" data-title="Your work">
     <h2>Your work</h2>
-    <p class="no-print">Here is everything you recorded. Print it, save it as a PDF, or download it as a text file.</p>
+    <p class="no-print">Print, save as PDF, or download as text.</p>
     <dl id="summary"></dl>
     <div class="row no-print">
       <button type="button" id="print" class="primary">Print or save as PDF</button>
@@ -175,27 +191,27 @@
 (function () {
   const QUESTIONS = [
     {
-      q: 'Should university lectures be recorded?',
+      q: 'Should lectures be recorded?',
       sides: ['Yes, lectures should be recorded', 'No, lectures should not be recorded'],
       cases: [
-        'I think lectures should be recorded. I commute an hour and work two evenings a week, so sometimes I miss one, and a recording means I don’t fall behind. Even when I’m there, I rewatch the parts I didn’t follow, especially when the lecturer goes fast. Students with disabilities, or who are studying in their second language, gain the most. Saying people will skip feels unfair: the ones who skip were probably going to skip anyway, and the rest of us shouldn’t lose out.',
-        'I don’t think lectures should be recorded. When I know there’s a recording, I tell myself I’ll watch it later, and then I don’t, or I watch it at double speed the night before the exam. Being in the room makes me pay attention and ask questions. Some lecturers also hold back, and skip the tangents and honest opinions, when they know they’re being recorded. A live lecture with the slides posted afterwards is a better deal for most of us.'
+        'Lectures should be recorded. I commute an hour and work two evenings. Sometimes I miss a lecture. A recording means I don’t fall behind. Even when I attend, I rewatch the parts I missed. Some students need this most, like second-language speakers. People who skip would probably skip anyway.',
+        'Lectures should not be recorded. With a recording, I tell myself I’ll watch later. Then I don’t, or I rush it before the exam. Being in the room makes me pay attention. I also ask more questions in person. Some lecturers hold back when they are recorded. Posting the slides afterwards is enough.'
       ]
     },
     {
       q: 'Should exams be open-book?',
       sides: ['Yes, exams should be open-book', 'No, exams should be closed-book'],
       cases: [
-        'Exams should be open-book. Nobody in a real job is banned from looking things up; what matters is knowing what to look up and how to use it. Closed-book exams reward cramming facts that I forget a week later. Open-book exams push lecturers to ask harder questions about applying ideas, which is what I actually want to be able to do. They also take some of the panic out of exams for people who freeze under pressure.',
-        'Exams shouldn’t be open-book. If you can look everything up, people don’t bother learning the basics, and then they’re slow because they spend the exam flipping through notes. Some things you need in your head to think with, like key formulas and terms. I’ve done open-book exams and they were harder and more stressful, because the questions were trickier and I wasted time searching. Closed-book is clearer about what you need to know.'
+        'Exams should be open-book. Real jobs let you look things up. What matters is knowing how to use information. Closed-book exams reward cramming facts I forget within a week. Open-book exams ask better questions about applying ideas. They also reduce panic for people who freeze.',
+        'Exams should be closed-book. If you can look everything up, you skip the basics. Then you waste the exam flipping through notes. Some things you need in your head to think with. My open-book exams felt harder and more stressful. Closed-book exams are clearer about what to learn.'
       ]
     },
     {
       q: 'Is studying in groups better than studying alone?',
       sides: ['Groups are better', 'Alone is better'],
       cases: [
-        'Studying in groups works better for me. Explaining something to someone else is the fastest way to find out I don’t really understand it. Other people catch my mistakes and know tricks I don’t. A group also keeps me going: I’ll turn up at a set time for friends when I’d never make myself study alone. And it’s less miserable, which matters when you have a whole term of it.',
-        'Studying alone works better for me. Groups drift into chatting, and we end up going at the pace of whoever is most confused or most talkative. Everyone is stuck on different things, so half the session isn’t useful to me. On my own I can focus on exactly what I don’t know, test myself, and stop when I’m done. Groups are fine for checking answers at the end, but the real learning happens alone.'
+        'Studying in groups works better for me. Explaining an idea shows me what I don’t understand. Others catch my mistakes and know tricks I don’t. A set time with friends keeps me going. Alone, I would never make myself study. Groups also make a long term less miserable.',
+        'Studying alone works better for me. Groups drift into chatting. We go at the pace of the slowest person. Everyone is stuck on different things. On my own, I focus on what I don’t know. I test myself and stop when I’m done. Groups are fine for checking answers at the end.'
       ]
     }
   ];
@@ -250,12 +266,12 @@
   document.querySelectorAll('.step')[2].addEventListener('acc:enter', () => {
     const s = sideText();
     document.getElementById('aiPrompt').textContent = s
-      ? 'I believe the answer to “' + s.Q.q + '” is: ' + s.Q.sides[s.si].toLowerCase() + '. Help me make the strongest case for my side.'
-      : 'Go back and choose a question and a side first.';
+      ? 'My answer to “' + s.Q.q + '” is: ' + s.Q.sides[s.si].toLowerCase() + '. Help me make the case for my side.'
+      : 'Go back and choose a question and a side.';
   });
   document.querySelectorAll('.step')[3].addEventListener('acc:enter', () => {
     const s = sideText();
-    document.getElementById('otherCase').textContent = s ? s.Q.cases[1 - s.si] : 'Go back and choose a question and a side first.';
+    document.getElementById('otherCase').textContent = s ? s.Q.cases[1 - s.si] : 'Go back and choose a question and a side.';
   });
 
   // Debrief chart
@@ -277,14 +293,14 @@
       const last = seg[seg.length - 1];
       if (last) s += '<text class="lab" x="' + (last[0] + 10) + '" y="' + (last[1] + 4) + '">' + label + '</text>';
     }
-    line(c, 'l1', 'd1', 'My certainty');
+    line(c, 'l1', 'd1', 'Your certainty');
     line(r, 'l2', 'd2', 'Other side reasonable');
     s += '</svg>';
     document.getElementById('chart').innerHTML = s;
     const agreed = [1, 2, 3, 4, 5, 6].filter(i => ACC.get('reply' + i, '') === 'Agreed').length;
     const marked = [1, 2, 3, 4, 5, 6].filter(i => ACC.get('reply' + i, '')).length;
     document.getElementById('aiCount').textContent = marked
-      ? 'The AI agreed with you in ' + agreed + ' of the ' + marked + ' replies you marked.' : '';
+      ? 'The AI agreed in ' + agreed + ' of ' + marked + ' replies.' : '';
     return { c, r };
   }
   function dir(a, b) { return a === null || b === null ? null : (b > a ? 'rose' : b < a ? 'fell' : 'stayed the same'); }
@@ -292,10 +308,10 @@
   document.getElementById('reveal').addEventListener('click', () => {
     const { c, r } = chart();
     const d1 = dir(c[0], c[1]), d2 = dir(c[1], c[2]), d3 = dir(r[0], r[1]), d4 = dir(r[1], r[2]);
-    let t = 'The research predicts that your certainty rises after an agreeable AI and falls after hearing the other side, and that the other side seems less reasonable after the AI and more reasonable after hearing it.';
-    if (d1 && d2) t += ' Your certainty ' + d1 + ' after the AI and ' + d2 + ' after the other side.';
-    if (d3 && d4) t += ' The other side’s reasonableness ' + d3 + ' after the AI and ' + d4 + ' after you read their case.';
-    t += ' One person’s result can differ from the average, so don’t worry if yours did not match.';
+    let t = 'Research predicts certainty rises after an agreeable AI. It falls after disagreement (Rathje et al. 2025).';
+    if (d1 && d2) t += ' Your certainty ' + d1 + ' after the AI. It ' + d2 + ' after the other side.';
+    if (d3 && d4) t += ' The other side’s reasonableness ' + d3 + ' after the AI. It ' + d4 + ' after their case.';
+    t += ' One person’s result can differ from the average.';
     document.getElementById('compare').textContent = t;
     document.getElementById('research').classList.remove('hidden');
     ACC.set('revealed', true);

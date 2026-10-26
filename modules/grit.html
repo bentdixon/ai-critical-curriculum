@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grit and Hard Problems</title>
-<meta name="description" content="A self-paced module: solve problems with AI first and on your own first, and see what you can still do alone.">
+<meta name="description" content="Understand how AI help during practice can lower later performance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -24,22 +24,22 @@
 
   <!-- 1 -->
   <section class="step" data-title="Introduction">
-    <h2>A question to start</h2>
-    <p>Think of the last hard problem you used AI for. Could you solve it on your own now, without looking?</p>
-    <label for="lastProblem">Your answer, in a sentence or two</label>
-    <textarea id="lastProblem" data-key="lastProblem" data-summary="Last hard problem I used AI for"></textarea>
-    <h2>What you will do</h2>
-    <p>You will solve two pairs of short probability and counting problems. In each pair, the second problem uses the same idea as the first.</p>
+    <h2>Is getting the answer learning?</h2>
+    <p>Think of the last hard problem you used AI for. Could you redo it alone?</p>
+    <label for="lastProblem">Your answer</label>
+    <textarea id="lastProblem" data-key="lastProblem" data-summary="Could I redo my last AI-solved problem alone?"></textarea>
+    <h2>About this module</h2>
+    <p>You will solve two pairs of problems. Each pair shares one idea.</p>
     <ul>
-      <li><span class="muted">Round 1, AI first.</span> An AI solves the first problem for you. Then you solve the second one alone.</li>
-      <li><span class="muted">Round 2, struggle first.</span> You work on the first problem alone, with hints if you need them. Then you solve the second one alone.</li>
+      <li><span class="muted">Round 1, AI first.</span> AI solves the first problem. You solve the second alone.</li>
+      <li><span class="muted">Round 2, struggle first.</span> You work alone on the first problem, with hints. Then you solve the second alone.</li>
     </ul>
-    <p>You will need your AI tool in another tab, and paper and a pen.</p>
-    <p>By the end you should be able to:</p>
+    <p>You need an AI tool, paper and a pen.</p>
+    <p>By the end, you will be able to:</p>
     <ol>
-      <li>Tell the difference between doing well with AI and lasting learning.</li>
+      <li>Distinguish performance with AI from lasting learning.</li>
       <li>Explain why productive struggle improves learning.</li>
-      <li>Describe how relying on AI for hard problems can build up over time.</li>
+      <li>Describe how relying on AI for hard problems compounds over time.</li>
       <li>Identify which steps of a problem you cannot do without AI.</li>
       <li>Set a personal rule for when to struggle before asking AI.</li>
     </ol>
@@ -48,31 +48,31 @@
   <!-- 2 -->
   <section class="step" data-title="Round 1: AI solves it">
     <h2>Problem A</h2>
-    <p class="ruled">In how many ways can 5 people sit around a round table? Seatings that differ only by rotation count as the same.</p>
-    <p>Ask your AI to solve it:</p>
-    <div class="prompt"><div class="text">In how many ways can 5 people sit around a round table, if seatings that differ only by rotation count as the same? Show your working.</div><button class="copy" type="button">Copy</button></div>
-    <p>Read its answer and working until you think you follow it. Then close the AI tab, or move it out of sight, and go to the next step.</p>
+    <p class="ruled">In how many ways can 5 people sit around a round table? Rotations of one seating count as the same.</p>
+    <p>Have the AI solve it:</p>
+    <div class="prompt"><div class="text">In how many ways can 5 people sit around a round table? Rotations count as the same seating. Show your working.</div><button class="copy" type="button">Copy</button></div>
+    <p>Read its working until you follow it. Then close the AI tab.</p>
     <label for="aiAnswerA">The AI's answer</label>
-    <input type="text" class="short" id="aiAnswerA" data-key="aiAnswerA" data-summary="AI's answer to Problem A">
+    <input type="text" class="short" id="aiAnswerA" data-key="aiAnswerA" data-summary="The AI's answer to Problem A">
   </section>
 
   <!-- 3 -->
   <section class="step" data-title="Round 1: on your own">
     <h2>Problem B</h2>
-    <p class="muted">No AI, no notes from the AI. Use paper and pen.</p>
-    <p class="ruled">Same table, same 5 people. In how many ways can they sit if two particular people refuse to sit next to each other?</p>
+    <p class="muted">No AI. Use paper and pen.</p>
+    <p class="ruled">Same table. In how many ways if two particular people refuse to sit together?</p>
     <div class="answer" data-problem="B">
       <label for="ansB">Your answer</label>
       <div class="row"><input type="text" class="short" id="ansB" data-key="ansB" data-summary="My answer to Problem B" inputmode="decimal"><button type="button" class="check">Check</button></div>
       <p class="feedback"></p>
     </div>
-    <label for="stepsB">Which steps could you not rebuild without the AI's explanation?</label>
-    <textarea id="stepsB" data-key="stepsB" data-summary="Steps I could not rebuild (Round 1)"></textarea>
+    <label for="stepsB">Mark the steps you can't rebuild without the AI.</label>
+    <textarea id="stepsB" data-key="stepsB" data-summary="Steps I can't rebuild (Round 1)"></textarea>
     <div class="row no-print"><button type="button" class="show" data-sol="solB">Show worked answer</button></div>
     <div id="solB" class="hidden ruled">
-      <p>Fix one person's seat to remove rotations. The other 4 can then be arranged in <span data-tex="4! = 24"></span> ways, which is the answer to Problem A:</p>
+      <p>Fix one person's seat to remove rotations. The other 4 can then sit in any order. This answers Problem A:</p>
       <div class="eq"><span class="m" data-tex="(5-1)! = 24"></span><span class="n">(1)</span></div>
-      <p>Now count seatings where the two people do sit together. Treat them as one block, giving 4 units round the table, so <span data-tex="(4-1)! = 6"></span> arrangements. The pair can sit in 2 orders inside the block:</p>
+      <p>Next, count seatings where the two sit together. Treat them as one block. That leaves 4 units around the table. The pair can also swap places inside the block:</p>
       <div class="eq"><span class="m" data-tex="2 \times (4-1)! = 12"></span><span class="n">(2)</span></div>
       <p>Subtract (2) from (1):</p>
       <div class="eq"><span class="m" data-tex="24 - 12 = 12"></span><span class="n">(3)</span></div>
@@ -82,19 +82,19 @@
   <!-- 4 -->
   <section class="step" data-title="Round 2: struggle first">
     <h2>Problem C</h2>
-    <p class="muted">No AI this time. Work on it alone for 5 minutes before you look at a hint.</p>
-    <p class="ruled">Two fair dice are rolled. You are told that at least one of them shows a 6. What is the probability that both show a 6?</p>
+    <p class="muted">No AI this time. Work alone for 5 minutes before using a hint.</p>
+    <p class="ruled">Two fair dice are rolled. Given at least one 6, what is the probability both are 6?</p>
     <div class="row"><span class="timer" id="timer">5:00</span><button type="button" id="timerBtn">Start 5-minute timer</button></div>
     <div class="row"><button type="button" id="hintBtn" disabled>Show a hint</button><span class="muted small" id="hintNote">Hints unlock when the timer ends.</span></div>
     <ol id="hints" class="hidden"></ol>
     <div class="answer" data-problem="C">
-      <label for="ansC">Your answer (a fraction such as 1/4 is fine)</label>
+      <label for="ansC">Your answer (a fraction is fine)</label>
       <div class="row"><input type="text" class="short" id="ansC" data-key="ansC" data-summary="My answer to Problem C"><button type="button" class="check">Check</button></div>
       <p class="feedback"></p>
     </div>
     <div class="row no-print"><button type="button" class="show" data-sol="solC">Show worked answer</button></div>
     <div id="solC" class="hidden ruled">
-      <p>There are 36 equally likely outcomes. The outcomes with no 6 number <span data-tex="5 \times 5 = 25"></span>, so the outcomes with at least one 6 number <span data-tex="36 - 25 = 11"></span>. Only one of those, (6, 6), has both dice showing 6:</p>
+      <p>There are 36 equally likely outcomes. Of these, <span data-tex="5 \times 5 = 25"></span> have no 6. So <span data-tex="36 - 25 = 11"></span> have at least one 6. Only (6, 6) shows two 6s:</p>
       <div class="eq"><span class="m" data-tex="P(\text{both } 6 \mid \text{at least one } 6) = \frac{1}{11}"></span><span class="n">(4)</span></div>
     </div>
   </section>
@@ -103,63 +103,63 @@
   <section class="step" data-title="Round 2: on your own">
     <h2>Problem D</h2>
     <p class="muted">No AI. Use paper and pen.</p>
-    <p class="ruled">A family has two children. You are told that at least one of them is a girl. What is the probability that both are girls? Assume each child is equally likely to be a girl or a boy.</p>
+    <p class="ruled">A family has two children. Given at least one is a girl, what is the probability both are girls? Girls and boys are equally likely.</p>
     <div class="answer" data-problem="D">
       <label for="ansD">Your answer</label>
       <div class="row"><input type="text" class="short" id="ansD" data-key="ansD" data-summary="My answer to Problem D"><button type="button" class="check">Check</button></div>
       <p class="feedback"></p>
     </div>
-    <label for="stepsD">Which steps, if any, could you not rebuild on your own?</label>
-    <textarea id="stepsD" data-key="stepsD" data-summary="Steps I could not rebuild (Round 2)"></textarea>
+    <label for="stepsD">Mark any steps you can't rebuild.</label>
+    <textarea id="stepsD" data-key="stepsD" data-summary="Steps I can't rebuild (Round 2)"></textarea>
     <div class="row no-print"><button type="button" class="show" data-sol="solD">Show worked answer</button></div>
     <div id="solD" class="hidden ruled">
-      <p>The four equally likely families are GG, GB, BG and BB. Knowing at least one is a girl rules out BB, leaving three. Only GG has two girls:</p>
+      <p>The four equally likely families are GG, GB, BG and BB. At least one girl rules out BB. Of the remaining three, only GG has two girls:</p>
       <div class="eq"><span class="m" data-tex="P(\text{both girls} \mid \text{at least one girl}) = \frac{1}{3}"></span><span class="n">(5)</span></div>
-      <p>This is the same idea as Problem C: list the outcomes that fit what you were told, then count the ones you want.</p>
+      <p>This uses the same idea as Problem C.</p>
     </div>
   </section>
 
   <!-- 6 -->
-  <section class="step" data-title="Compare">
-    <h2>Compare your two rounds</h2>
+  <section class="step" data-title="Debrief">
+    <h2>Compare results</h2>
     <div id="scoreTable"></div>
-    <label for="easier">Which follow-up problem, B or D, felt easier to do alone? Why?</label>
+    <label for="easier">Which follow-up felt easier, B or D? Why?</label>
     <textarea id="easier" data-key="easier" data-summary="Which follow-up felt easier, and why"></textarea>
-    <div class="row"><button type="button" id="reveal">Show what the research found</button></div>
+    <div class="row"><button type="button" id="reveal">Show the research</button></div>
     <div id="research" class="hidden">
-      <h2>What the research found</h2>
-      <p>In a trial with nearly 1,000 high school students, those who practised maths with plain GPT-4 scored 48% higher on practice problems. But when the AI was taken away for the exam, they scored 17% lower than students who had never had it (Bastani et al. 2025).</p>
-      <p class="muted">Your two rounds are a demonstration, not an experiment. The problems differ in difficulty, and you did them in a fixed order, so treat your own result as something to think about rather than proof.</p>
+      <h2>The research</h2>
+      <p>Nearly 1,000 students practised maths with plain GPT-4. It raised their practice grades by 48%. Without it, they scored 17% below peers (Bastani et al. 2025).</p>
+      <p class="muted">Your two rounds are a demonstration, not an experiment. The problems differ, and the order was fixed. Treat your result as something to think about.</p>
     </div>
   </section>
 
   <!-- 7 -->
   <section class="step" data-title="Why struggle">
-    <h2>Key ideas</h2>
+    <h2>Key concepts</h2>
     <div class="table-scroll">
     <table>
-      <thead><tr><th>Idea</th><th>What it means</th></tr></thead>
+      <thead><tr><th>Concept</th><th>Definition</th></tr></thead>
       <tbody>
-        <tr><td>Desirable difficulty</td><td>Harder practice feels slower but is remembered better (Bjork 1994).</td></tr>
-        <tr><td>Productive failure</td><td>Struggling with a problem before being taught how to solve it beats being taught first (Sinha and Kapur 2021).</td></tr>
-        <tr><td>Skill decay</td><td>Skills you do not use fade, and thinking skills fade fastest (Arthur et al. 1998).</td></tr>
+        <tr><td>Desirable difficulty</td><td>Harder practice feels slower but is retained better (Bjork 1994)</td></tr>
+        <tr><td>Productive failure</td><td>Struggling before instruction beats instruction first (Sinha and Kapur 2021)</td></tr>
+        <tr><td>Skill decay</td><td>Unused skills fade, and thinking skills fade fastest (Arthur et al. 1998)</td></tr>
       </tbody>
     </table>
     </div>
-    <h2>Why it builds up</h2>
-    <p>Confidence grows from doing hard things yourself (Bandura 1977), and people with less confidence hand more of their thinking to AI (Lee et al. 2025). Each hard problem you give to AI skips both the practice and the success, so the next hard problem feels harder, and you are more likely to hand that one over too.</p>
+    <h2>Why the cap compounds</h2>
+    <p>Confidence grows from doing hard things yourself (Bandura 1977). Less self-confident people hand more thinking to AI (Lee et al. 2025). Each hard problem given to AI skips useful practice. This makes the next problem feel harder.</p>
     <h2>Common misconceptions</h2>
     <ul>
-      <li>“If I got the right answer with AI, I learned it.” Doing well with a tool is not the same as learning.</li>
-      <li>“Struggling means I'm doing it wrong.” Struggle is often a sign that learning is happening.</li>
-      <li>“AI always harms learning.” Well-designed AI tutors can help (Kestin et al. 2025). How you use it matters.</li>
+      <li>“If I got the right answer with AI, I learned it.” Performance with a tool is not learning.</li>
+      <li>“Struggling means I’m doing it wrong.” Struggle is often a sign that learning is happening.</li>
+      <li>“AI always harms learning.” Well-designed tutors can help (Kestin et al. 2025).</li>
     </ul>
   </section>
 
   <!-- 8 -->
-  <section class="step" data-title="Your struggle rule">
-    <h2>Set a rule for yourself</h2>
-    <p>Write a rule for when you will struggle on your own before asking AI. For example: “15 minutes alone, then hints only, never the full answer.”</p>
+  <section class="step" data-title="Struggle rule">
+    <h2>Set your struggle rule</h2>
+    <p>Write a personal rule for when to struggle before asking AI. For example: “15 minutes alone, then hints only.”</p>
     <label for="rule">My struggle rule</label>
     <textarea id="rule" data-key="rule" data-summary="My struggle rule"></textarea>
     <p class="muted small">This is not graded.</p>
@@ -168,7 +168,7 @@
   <!-- 9 -->
   <section class="step summary-step" data-title="Your work">
     <h2>Your work</h2>
-    <p class="no-print">Here is everything you recorded. Print it, save it as a PDF, or download it as a text file.</p>
+    <p class="no-print">Print, save as PDF, or download as text.</p>
     <dl id="summary"></dl>
     <div class="row no-print">
       <button type="button" id="print" class="primary">Print or save as PDF</button>
@@ -218,9 +218,9 @@
     const fb = box.querySelector('.feedback');
     function check(record) {
       const v = parse(input.value);
-      if (isNaN(v)) { fb.textContent = 'Enter a number or a fraction.'; fb.className = 'feedback no'; return; }
+      if (isNaN(v)) { fb.textContent = 'Enter a number or fraction.'; fb.className = 'feedback no'; return; }
       const ok = correct(p, v);
-      fb.textContent = ok ? 'Correct.' : 'Not quite. Try again, or show the worked answer.';
+      fb.textContent = ok ? 'Correct.' : 'Not quite. Try again or show the worked answer.';
       fb.className = 'feedback ' + (ok ? 'ok' : 'no');
       if (record) {
         if (ACC.get('first' + p) === undefined) ACC.set('first' + p, ok);
@@ -243,9 +243,9 @@
 
   // Timer and staged hints for Problem C
   const HINTS = [
-    'Write out all 36 outcomes of two dice, or picture them as a 6 by 6 grid.',
-    'How many of the 36 outcomes have at least one 6? Try counting the outcomes with no 6 first.',
-    'Of the outcomes with at least one 6, how many have both dice showing 6?'
+    'Picture all 36 outcomes as a 6 by 6 grid.',
+    'Count the outcomes with no 6 first.',
+    'Of the outcomes with a 6, how many show two 6s?'
   ];
   const timerEl = document.getElementById('timer');
   const timerBtn = document.getElementById('timerBtn');
@@ -256,7 +256,7 @@
   function fmt(s) { return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
   function unlock() {
     hintBtn.disabled = ACC.get('hintsShown', 0) >= HINTS.length;
-    hintNote.textContent = 'You can now use hints, one at a time.';
+    hintNote.textContent = 'Hints are now available, one at a time.';
     timerEl.textContent = '0:00';
     timerBtn.classList.add('hidden');
   }
@@ -287,7 +287,7 @@
   }
   document.querySelectorAll('.step')[5].addEventListener('acc:enter', () => {
     document.getElementById('scoreTable').innerHTML =
-      '<table><thead><tr><th>Round</th><th>Follow-up problem</th><th>Result</th><th>Hints used</th></tr></thead><tbody>' +
+      '<table><thead><tr><th>Round</th><th>Follow-up</th><th>Result</th><th>Hints used</th></tr></thead><tbody>' +
       '<tr><td>1. AI first</td><td>B (round table)</td><td>' + mark('B') + '</td><td>Not applicable</td></tr>' +
       '<tr><td>2. Struggle first</td><td>D (two children)</td><td>' + mark('D') + '</td><td>' + ACC.get('hintsShown', 0) + ' on Problem C</td></tr>' +
       '</tbody></table>';
