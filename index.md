@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 
-# Using AI Responsibly
+# The AI Curriculum (TAIC)
 {: .fs-8 }
 
 Most modules take about 35 minutes. Some steps need an AI tool, such as ChatGPT or Claude. Your answers stay in this browser.

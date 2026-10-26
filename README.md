@@ -1,4 +1,4 @@
-# Using AI Responsibly
+# The AI Curriculum (TAIC)
 
 Self-paced modules on using AI responsibly:
 
