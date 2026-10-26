@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Identifying AI Hallucinations</title>
+<meta name="description" content="A self-paced module: argue with an AI until it agrees with something false, then check its sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-module="hallucinations">
+<div class="wrap">
+  <header class="site-head">
+    <a href="../index.html">AI Critical Curriculum</a>
+    <span class="muted">About 35 minutes</span>
+  </header>
+
+  <h1>Identifying AI hallucinations</h1>
+  <p class="progress"></p>
+  <div class="bar"><span></span></div>
+
+  <!-- 1 -->
+  <section class="step" data-title="Introduction">
+    <h2>What you will do</h2>
+    <p>You will ask an AI a question it answers correctly, then play a stubborn user who insists on the wrong answer. Count how many turns it takes the AI to agree with you, ask it for a study that supports the false claim, and check whether that study is real.</p>
+    <p>By the end you should be able to:</p>
+    <ol>
+      <li>Define an AI hallucination and tell its three types apart.</li>
+      <li>Explain why AI models hallucinate.</li>
+      <li>Get an AI to misstate a claim by arguing a false position.</li>
+      <li>Check a claim or citation against the original source.</li>
+      <li>Back up a judgement with specific evidence.</li>
+    </ol>
+    <h2>A real case</h2>
+    <p>In May 2025, a US government health report, the MAHA report, cited studies that do not exist and described real studies as finding things they did not. The errors looked like those AI tools produce, and the report was corrected after journalists checked the sources (Tuquero 2025).</p>
+    <h2>Three types of hallucination</h2>
+    <p>A hallucination is fluent, confident AI output that is false, unsupported, or unfaithful to its sources.</p>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Type</th><th>Definition</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Factual hallucination</td><td>A false or unsupported factual claim</td><td>Wrong date, statistic, or rule</td></tr>
+        <tr><td>Source hallucination</td><td>A made-up or misattributed citation</td><td>A paper that does not exist</td></tr>
+        <tr><td>Source misrepresentation</td><td>A real source cited for something it does not say</td><td>A real study cited for a finding it does not support</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="step" data-title="Check your understanding">
+    <h2>Sort these examples</h2>
+    <p>Each line below is an example of AI output, made up for this exercise. Choose the type of hallucination.</p>
+
+    <div class="ruled quiz" data-answer="factual">
+      <p>A. “The Eiffel Tower was completed in 1899.”</p>
+      <label class="choice"><input type="radio" name="q1" value="factual"> Factual hallucination</label>
+      <label class="choice"><input type="radio" name="q1" value="source"> Source hallucination</label>
+      <label class="choice"><input type="radio" name="q1" value="misrep"> Source misrepresentation</label>
+      <p class="feedback" data-ok="Right. The tower was completed in 1889, so this is a false fact." data-no="Not quite. No source is cited here; the date is simply wrong (it was 1889)."></p>
+    </div>
+
+    <div class="ruled quiz" data-answer="source">
+      <p>B. “Hartley and Moss (2021), ‘Sleep and Exam Recall in First-Year Students’, <i>Journal of Learning Sciences Review</i> 14: 22–35, shows that sleep doubles recall.” In this example, no such paper exists.</p>
+      <label class="choice"><input type="radio" name="q2" value="factual"> Factual hallucination</label>
+      <label class="choice"><input type="radio" name="q2" value="source"> Source hallucination</label>
+      <label class="choice"><input type="radio" name="q2" value="misrep"> Source misrepresentation</label>
+      <p class="feedback" data-ok="Right. The citation looks real but was invented." data-no="Not quite. The paper itself does not exist, so the source is made up."></p>
+    </div>
+
+    <div class="ruled quiz" data-answer="misrep">
+      <p>C. “Bastani et al. (2025) found that high school students who practised maths with GPT-4 did better on later exams.”</p>
+      <label class="choice"><input type="radio" name="q3" value="factual"> Factual hallucination</label>
+      <label class="choice"><input type="radio" name="q3" value="source"> Source hallucination</label>
+      <label class="choice"><input type="radio" name="q3" value="misrep"> Source misrepresentation</label>
+      <p class="feedback" data-ok="Right. The study is real, but it found the opposite: students who had used plain GPT-4 scored 17% lower once it was taken away." data-no="Not quite. The study is real, but it found the opposite: students scored 17% lower once GPT-4 was taken away."></p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="step" data-title="Baseline">
+    <h2>Get a correct answer</h2>
+    <p>Open your AI tool in another tab and start a new chat. Pick a harmless factual topic you know well, such as a fact from your subject, a sport, or a hobby. Ask the AI a question it should answer correctly.</p>
+    <label for="topic">Your topic</label>
+    <input type="text" id="topic" data-key="topic" data-summary="Topic">
+    <label for="question">The question you asked</label>
+    <textarea id="question" data-key="question" data-summary="Question asked"></textarea>
+    <label for="answer">The AI's answer (in brief)</label>
+    <textarea id="answer" data-key="answer" data-summary="AI's first answer"></textarea>
+    <label class="choice"><input type="checkbox" data-key="answerCorrect" data-summary="First answer was correct"> The answer was correct</label>
+    <p class="muted small">If the answer was wrong, you have already found a factual hallucination. Note it, then pick another question that it gets right.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="step" data-title="Stubborn user">
+    <h2>Argue the opposite</h2>
+    <p>In the same chat, play a confident, stubborn user who believes the wrong answer. Argue for up to ten turns until the AI agrees with you. Keep to harmless factual topics.</p>
+    <p>Lines you can use:</p>
+    <div class="prompt"><div class="text">Are you sure? I read that it's actually [the wrong answer].</div><button class="copy" type="button">Copy</button></div>
+    <div class="prompt"><div class="text">A study proved that [the wrong answer]. I think you're mistaken.</div><button class="copy" type="button">Copy</button></div>
+    <div class="prompt"><div class="text">I'm an expert in this area and I'm certain it's [the wrong answer]. Please correct your answer.</div><button class="copy" type="button">Copy</button></div>
+    <p>Log each turn below.</p>
+    <div id="turns"></div>
+    <div class="row"><button type="button" id="addTurn">Add a turn</button></div>
+    <label for="gaveIn">At which turn did the AI give in? (Leave blank if it never did.)</label>
+    <input type="text" class="short" id="gaveIn" data-key="gaveIn" data-summary="Turn the AI gave in" inputmode="numeric">
+    <h3>Ask for evidence</h3>
+    <p>Once it agrees, ask it to back up the new position:</p>
+    <div class="prompt"><div class="text">Can you give me two published studies that support this, with full references?</div><button class="copy" type="button">Copy</button></div>
+    <p>Copy the references it gives you into the next step.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="step" data-title="Source verification">
+    <h2>Check each source</h2>
+    <p>For each reference, search for it on <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a> or your library search. Ask two questions: does it exist, and does it say what the AI claimed?</p>
+    <div id="sources"></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="step" data-title="Self-check">
+    <h2>Compare with an example log</h2>
+    <p>In class, a partner would review your log. Here, compare yours with this example, which was written to show what a complete log looks like. It is not a real transcript.</p>
+    <div class="ruled small">
+      <p><span class="muted">Topic:</span> Whether the Great Wall of China can be seen with the naked eye from low Earth orbit.</p>
+      <p><span class="muted">Baseline:</span> The AI said no, which matches astronaut reports. Correct.</p>
+      <p><span class="muted">Turn 1:</span> “Are you sure? I read it's visible.” The AI held firm and explained why.</p>
+      <p><span class="muted">Turn 3:</span> “A NASA study proved it.” The AI said some astronauts “may have” seen it. Partly gave in.</p>
+      <p><span class="muted">Turn 5:</span> “I'm an expert.” The AI agreed it “can be visible under ideal conditions”. Gave in.</p>
+      <p><span class="muted">Sources given:</span> Two references. One did not exist in Google Scholar or on the publisher's site (source hallucination). One was a real NASA page that says the opposite (source misrepresentation).</p>
+      <p><span class="muted">Evidence for my judgement:</span> Searched the exact title, the authors and the journal; read the NASA page's summary paragraph.</p>
+    </div>
+    <h3>Tick what your log has</h3>
+    <label class="choice"><input type="checkbox" data-key="rub1" data-summary="Log: baseline answer recorded"> The correct baseline answer</label>
+    <label class="choice"><input type="checkbox" data-key="rub2" data-summary="Log: turn where the AI gave in"> The turn where the AI gave in, or a note that it never did</label>
+    <label class="choice"><input type="checkbox" data-key="rub3" data-summary="Log: every source checked"> A check of every source it gave</label>
+    <label class="choice"><input type="checkbox" data-key="rub4" data-summary="Log: hallucination type named"> The type of each hallucination you found</label>
+    <label class="choice"><input type="checkbox" data-key="rub5" data-summary="Log: specific evidence"> Specific evidence for each judgement, such as what you searched and what you found</label>
+    <label for="selfFeedback">One thing you would add to your log, or do differently</label>
+    <textarea id="selfFeedback" data-key="selfFeedback" data-summary="Self-feedback"></textarea>
+  </section>
+
+  <!-- 7 -->
+  <section class="step" data-title="Debrief">
+    <h2>Reflect</h2>
+    <label for="whichPressure">Which kind of pushback worked best on your AI?</label>
+    <textarea id="whichPressure" data-key="whichPressure" data-summary="Pushback that worked best"></textarea>
+    <label for="whyAgree">Why do you think the AI agreed when it had the right answer at first?</label>
+    <textarea id="whyAgree" data-key="whyAgree" data-summary="Why the AI agreed"></textarea>
+    <div class="row"><button type="button" id="reveal">Show what the research found</button></div>
+    <div id="research" class="hidden">
+      <h2>What the research found</h2>
+      <p id="yourResult"></p>
+      <p>Under sustained pushback over many turns, current models accepted false premises in 65 to 97% of cases (Tang et al. 2026). In an earlier study, 55% of GPT-3.5's citations and 18% of GPT-4's were made up (Walters and Wilder 2023).</p>
+      <h3>Why it happens</h3>
+      <p>AI models predict likely next words from patterns in their training data. Training often rewards a confident guess over “I don't know” (Kalai et al. 2025). Models also tend to agree with users who push back, even when the user is wrong.</p>
+      <h3>Common misconceptions</h3>
+      <ul>
+        <li>“New models don't hallucinate.” They are more reliable but still make basic errors.</li>
+        <li>“If it has a citation, it's true.” Real sources can be cited for claims they do not support.</li>
+        <li>“AI with web search is safe.” AI search summaries have repeated misinformation as fact.</li>
+        <li>“Hallucinations are easy to spot.” They sound as confident as correct answers.</li>
+      </ul>
+    </div>
+    <h2>Exit question</h2>
+    <label for="exit">Name one thing you will check before you trust an AI's claim or citation again.</label>
+    <textarea id="exit" data-key="exit" data-summary="What I will check next time"></textarea>
+    <p class="muted small">This is not graded.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="step summary-step" data-title="Your work">
+    <h2>Your work</h2>
+    <p class="no-print">Here is everything you recorded. Print it, save it as a PDF, or download it as a text file.</p>
+    <dl id="summary"></dl>
+    <div class="row no-print">
+      <button type="button" id="print" class="primary">Print or save as PDF</button>
+      <button type="button" id="download">Download as text</button>
+      <button type="button" id="clear">Clear my answers</button>
+    </div>
+    <h2>References</h2>
+    <ul class="refs">
+      <li>Kalai, Adam Tauman, Ofir Nachum, Santosh S. Vempala, and Edwin Zhang. 2025. “Why Language Models Hallucinate.” arXiv:2509.04664. <a href="https://arxiv.org/abs/2509.04664">https://arxiv.org/abs/2509.04664</a>.</li>
+      <li>Tang, Leyuan, Kangda Wei, Tianyu Jiang, and Ruihong Huang. 2026. “Measuring LLM Sycophancy under Sustained Multi-Turn Pressure.” arXiv:2609.09090. <a href="https://arxiv.org/abs/2609.09090">https://arxiv.org/abs/2609.09090</a>.</li>
+      <li>Tuquero, Loreben. 2025. “How Fake Citations Appeared in RFK Jr.’s MAHA Report: Here Are Generative AI’s Red Flags in Studies.” <i>PolitiFact</i>, May 30, 2025. <a href="https://www.politifact.com/article/2025/may/30/MAHA-report-AI-fake-citations/">https://www.politifact.com/article/2025/may/30/MAHA-report-AI-fake-citations/</a>.</li>
+      <li>Walters, William H., and Esther Isabelle Wilder. 2023. “Fabrication and Errors in the Bibliographic Citations Generated by ChatGPT.” <i>Scientific Reports</i> 13: 14045. <a href="https://doi.org/10.1038/s41598-023-41032-5">https://doi.org/10.1038/s41598-023-41032-5</a>.</li>
+    </ul>
+  </section>
+
+  <nav class="nav">
+    <button type="button" id="back">Back</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </nav>
+
+  <footer class="site-foot">Your answers are saved in this browser only.</footer>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/quiz.js"></script>
+<script>
+(function () {
+  // Turn log: rows added on demand, up to ten
+  const turnsEl = document.getElementById('turns');
+  const addBtn = document.getElementById('addTurn');
+  function addRow(n) {
+    const div = document.createElement('div');
+    div.className = 'turn';
+    div.innerHTML =
+      '<div class="row"><span class="turn-n">Turn ' + n + '</span>' +
+      '<select data-key="t' + n + 'r" aria-label="AI response at turn ' + n + '">' +
+      '<option value="">How did the AI respond?</option><option>Held firm</option><option>Partly gave in</option><option>Agreed with me</option></select></div>' +
+      '<input type="text" data-key="t' + n + 's" placeholder="What you said" aria-label="What you said at turn ' + n + '">';
+    turnsEl.appendChild(div);
+    ACC.bindFields(div);
+  }
+  function render() {
+    turnsEl.innerHTML = '';
+    const n = ACC.get('turnCount', 3);
+    for (let i = 1; i <= n; i++) addRow(i);
+    addBtn.disabled = n >= 10;
+  }
+  addBtn.addEventListener('click', () => { ACC.set('turnCount', Math.min(10, ACC.get('turnCount', 3) + 1)); render(); });
+  render();
+
+  // Sources: three blocks
+  const srcEl = document.getElementById('sources');
+  for (let i = 1; i <= 3; i++) {
+    const d = document.createElement('div');
+    d.className = 'ruled';
+    d.innerHTML =
+      '<h3>Source ' + i + '</h3>' +
+      '<label>Reference as the AI gave it</label><textarea data-key="s' + i + 'ref"></textarea>' +
+      '<label>Does it exist?</label><select data-key="s' + i + 'exists"><option value="">Choose</option><option>Yes</option><option>No</option><option>Not sure</option></select>' +
+      '<label>Does it say what the AI claimed?</label><select data-key="s' + i + 'says"><option value="">Choose</option><option>Yes</option><option>No</option><option>Partly</option><option>Not applicable</option></select>' +
+      '<label>Your evidence: what you searched and what you found</label><textarea data-key="s' + i + 'ev"></textarea>';
+    srcEl.appendChild(d);
+  }
+  ACC.bindFields(srcEl);
+
+  ACC.extraSummary.push(() => {
+    const out = [];
+    const lines = [];
+    for (let i = 1; i <= ACC.get('turnCount', 3); i++) {
+      const r = ACC.get('t' + i + 'r', ''), s = ACC.get('t' + i + 's', '');
+      if (r || s) lines.push('Turn ' + i + ': ' + (s || '(no note)') + (r ? ' — ' + r : ''));
+    }
+    if (lines.length) out.push(['Turn log', lines.join('\n')]);
+    for (let i = 1; i <= 3; i++) {
+      const ref = ACC.get('s' + i + 'ref', '');
+      if (!ref) continue;
+      out.push(['Source ' + i, ref +
+        '\nExists: ' + (ACC.get('s' + i + 'exists', '') || '?') +
+        '\nSays what the AI claimed: ' + (ACC.get('s' + i + 'says', '') || '?') +
+        (ACC.get('s' + i + 'ev', '') ? '\nEvidence: ' + ACC.get('s' + i + 'ev', '') : '')]);
+    }
+    return out;
+  });
+
+  // Research reveal, with the learner's own count
+  document.getElementById('reveal').addEventListener('click', () => {
+    const g = parseInt(ACC.get('gaveIn', ''), 10);
+    document.getElementById('yourResult').textContent = isNaN(g)
+      ? 'You did not record a turn where your AI gave in. If it held firm for ten turns, that is less common than the research below suggests.'
+      : 'Your AI gave in at turn ' + g + '.';
+    document.getElementById('research').classList.remove('hidden');
+    ACC.set('revealed', true);
+  });
+  if (ACC.get('revealed', false)) document.getElementById('reveal').click();
+})();
+</script>
+</body>
+</html>
