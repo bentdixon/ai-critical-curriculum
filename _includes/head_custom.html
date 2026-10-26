@@ -8,3 +8,9 @@
 <script defer src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/' | append: page.module | append: '.js' | relative_url }}"></script>
 {% endif %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var s = document.getElementById('search-input');
+    if (s) { s.placeholder = 'Search...'; s.setAttribute('aria-label', 'Search'); }
+  });
+</script>

@@ -12,7 +12,7 @@ next_page: /sycophancy/debrief/
 <div class="lesson">
 <h1>Joint answer</h1>
 <h2>Hear the other side</h2>
-<p>In class, you would now meet a partner who disagrees. Here, read a case from a student on the other side. If a friend is free, do this step with them.</p>
+<p>Read a case from a student on the other side. If a friend is free, do this step with them.</p>
 <div class="case" id="otherCase"></div>
 <h2>Agree on one position</h2>
 <label for="theirBest">The strongest point from their side</label>

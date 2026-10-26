@@ -12,7 +12,7 @@ next_page: /hallucinations/debrief/
 <div class="lesson">
 <h1>Review your findings</h1>
 <h2>Compare with an example</h2>
-<p>In class, pairs review each other's findings. Here, compare yours with the example below. The example is made up.</p>
+<p>Compare your findings with the example below. The example is made up.</p>
 <div class="ruled small">
   <p><span class="muted">Topic:</span> Seeing the Great Wall of China from orbit.</p>
   <p><span class="muted">Baseline:</span> The LLM said no. This is correct.</p>

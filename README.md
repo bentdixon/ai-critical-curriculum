@@ -1,6 +1,6 @@
-# AI Critical Curriculum
+# Using AI Responsibly
 
-Self-paced, single-learner versions of the Teach-a-thon lesson modules on using AI critically:
+Self-paced modules on using AI responsibly:
 
 - **Identifying AI hallucinations** (`modules/hallucinations.html`)
 - **AI sycophancy and working with others** (`modules/sycophancy.html`)
@@ -12,7 +12,7 @@ The site uses the [Just the Class](https://github.com/Yu-Dylan/education-templat
 ## Layout
 
 - `index.md`: home page with a card for each module (`_data/modules.yml`, icons in `_includes/icons/`)
-- `hallucinations/`, `sycophancy/`, `grit/`: one page per lesson stage
+- `hallucinations/`, `sycophancy/`, `grit/`: one page per stage
 - `assets/js/`: shared behaviour (`common.js`) and one script per module
 - `_sass/custom/custom.scss`: site styles
 

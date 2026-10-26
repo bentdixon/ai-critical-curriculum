@@ -5,10 +5,10 @@ nav_order: 1
 permalink: /
 ---
 
-# Using AI critically
+# Using AI Responsibly
 {: .fs-8 }
 
-Each module is a self-paced version of a 45-minute lesson. Some steps need an AI tool, such as ChatGPT or Claude. Your answers stay in this browser.
+Each module takes about 35 minutes. Some steps need an AI tool, such as ChatGPT or Claude. Your answers stay in this browser.
 {: .fs-5 .fw-300 }
 
 <div class="module-grid">

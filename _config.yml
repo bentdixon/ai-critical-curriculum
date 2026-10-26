@@ -1,4 +1,4 @@
-title: AI Critical Curriculum
+title: Using AI Responsibly
 description: Self-paced modules on using AI critically.
 baseurl: '/ai-critical-curriculum'
 url: 'https://bentdixon.github.io'
@@ -10,7 +10,7 @@ color_scheme: light
 search_enabled: true
 heading_anchors: false
 permalink: pretty
-footer_content: "Built for the Teach-a-thon. Designed with the Edinburgh Learning Design Roadmap (ELDeR)."
+footer_content: "Designed with the Edinburgh Learning Design Roadmap (ELDeR)."
 
 plugins:
   - jekyll-seo-tag
