@@ -8,7 +8,7 @@ permalink: /
 # Using AI Responsibly
 {: .fs-8 }
 
-Each module takes about 35 minutes. Some steps need an AI tool, such as ChatGPT or Claude. Your answers stay in this browser.
+Most modules take about 35 minutes. Some steps need an AI tool, such as ChatGPT or Claude. Your answers stay in this browser.
 {: .fs-5 .fw-300 }
 
 <div class="module-grid">

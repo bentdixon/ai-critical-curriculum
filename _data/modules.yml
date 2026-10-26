@@ -18,3 +18,8 @@ mental-health:
   blurb: This module is in development.
   url: /mental-health/
   time: Coming soon
+reflection:
+  title: Reflecting on your AI use
+  blurb: Understand how you use AI now, and how you want to use it.
+  url: /reflection/
+  time: 1–2 hours
