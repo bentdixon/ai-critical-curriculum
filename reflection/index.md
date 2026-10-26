@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Reflecting on your AI use"
-nav_order: 6
+nav_order: 7
 has_children: true
 has_toc: false
 module: reflection

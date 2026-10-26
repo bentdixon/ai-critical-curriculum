@@ -188,3 +188,14 @@ dl.facts {
   .side-bar, .main-header, .pager, .no-print, .site-footer, button { display: none !important; }
   .main { margin: 0 !important; max-width: none !important; }
 }
+
+// Bloom's taxonomy pyramid
+.lesson .pyramid {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  margin: $sp-4 0 $sp-2;
+  span {
+    display: block; text-align: center; padding: $sp-1 0;
+    background: $grey-lt-000; border: $border $grey-lt-300; border-radius: $border-radius;
+    color: $body-heading-color; @include fs-3;
+  }
+}
