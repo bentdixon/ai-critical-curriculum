@@ -13,7 +13,7 @@ Most modules take about 35 minutes. Some steps need an AI tool, such as ChatGPT 
 
 <div class="module-grid">
 {% for pair in site.data.modules %}{% assign key = pair[0] %}{% assign m = pair[1] %}
-  <a class="module-card{% if key == 'mental-health' %} is-soon{% endif %}" href="{{ m.url | relative_url }}">
+  <a class="module-card" href="{{ m.url | relative_url }}">
     <span class="module-icon">{% include icons/{{ key }}.svg %}</span>
     <span class="module-title">{{ m.title }}</span>
     <span class="module-blurb">{{ m.blurb }}</span>
